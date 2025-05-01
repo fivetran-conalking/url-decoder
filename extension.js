@@ -11,15 +11,30 @@ function activate(context) {
     const selection = editor.selection;
     const text = editor.document.getText(selection);
 
+    let decoded;
+
     try {
-      const decoded = decodeURIComponent(text);
-      editor.edit(editBuilder => {
-        editBuilder.replace(selection, decoded);
-      });
-      vscode.window.showInformationMessage('Decoded!');
-    } catch (e) {
-      vscode.window.showErrorMessage('Invalid encoded text');
+      // Try decoding the full selection first
+      decoded = decodeURIComponent(text);
+    } catch {
+      // Fallback: try decoding line by line
+      decoded = text
+        .split(/\r?\n/)
+        .map(line => {
+          try {
+            return decodeURIComponent(line);
+          } catch {
+            return line; // Keep original if decoding fails
+          }
+        })
+        .join('\n');
     }
+
+    editor.edit(editBuilder => {
+      editBuilder.replace(selection, decoded);
+    });
+
+    vscode.window.showInformationMessage('Decoded selected text!');
   });
 
   context.subscriptions.push(disposable);
