@@ -6,6 +6,7 @@ A simple VS Code extension that decodes URL-encoded text (like `%20` → space) 
 
 - Decode URL-encoded strings in-place
 - Works with selected text in any file
+- Gracefully handles multi-line or partially encoded text
 - Quickly accessible via the Command Palette
 
 ## 🛠 How to Use
@@ -21,8 +22,8 @@ A simple VS Code extension that decodes URL-encoded text (like `%20` → space) 
 
 ### Option 1: Download Prebuilt `.vsix`
 
-1. Go to the [Releases page](https://github.com/fivetran-conalking/url-decoder/releases/tag/v1.0.0)
-2. Download the file: `url-decoder-1.0.0.vsix`
+1. Go to the [Releases page](https://github.com/fivetran-conalking/url-decoder/releases/tag/v1.0.1)
+2. Download: `url-decoder-1.0.1.vsix`
 3. In VS Code:
    - Press `Cmd+Shift+P`
    - Run: `Extensions: Install from VSIX...`
@@ -36,4 +37,4 @@ git clone https://github.com/fivetran-conalking/url-decoder.git
 cd url-decoder
 npm install
 vsce package
-code --install-extension url-decoder-1.0.0.vsix
+code --install-extension url-decoder-1.0.1.vsix
