@@ -3,6 +3,10 @@
   "displayName": "URL Decoder",
   "description": "Decodes URL-encoded text.",
   "version": "0.0.1",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/fivetran-conalking/url-decoder"
+},
   "engines": {
     "vscode": "^1.99.0"
   },
