@@ -15,20 +15,25 @@ A simple VS Code extension that decodes URL-encoded text (like `%20` → space) 
 3. Run: **"Decode URL Encoding"**
 4. The selected text will be replaced with its decoded version (e.g. `Hello World!`)
 
-## 📦 Installation
+---
 
-### Option 1: From VSIX
+## 🧩 Install the Extension
 
-1. Download or build `url-decoder-0.0.1.vsix`
-2. In VS Code, press `Cmd+Shift+P` and run: `Extensions: Install from VSIX...`
-3. Select the `.vsix` file
-4. Done!
+### Option 1: Download Prebuilt `.vsix`
 
-### Option 2: Manual Build
+1. Go to the [Releases page](https://github.com/fivetran-conalking/url-decoder/releases/tag/v1.0.0)
+2. Download the file: `url-decoder-1.0.0.vsix`
+3. In VS Code:
+   - Press `Cmd+Shift+P`
+   - Run: `Extensions: Install from VSIX...`
+   - Select the downloaded file
+4. ✅ You're done!
+
+### Option 2: Build from Source
 
 ```bash
-git clone https://github.com/your-name/url-decoder.git
+git clone https://github.com/fivetran-conalking/url-decoder.git
 cd url-decoder
 npm install
 vsce package
-code --install-extension url-decoder-0.0.1.vsix
+code --install-extension url-decoder-1.0.0.vsix
